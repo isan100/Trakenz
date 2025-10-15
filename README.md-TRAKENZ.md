@@ -42,7 +42,7 @@ A unified Web3-first dashboard (mobile + web) that links to user wallets (read-o
 
 - **Frontend (React / React Native)**
 - **Backend API (Node.js + Express / NestJS)**
-- \*\*Indexer / Worker (Node.js / Python)
+- **Indexer / Worker (Node.js / Python)**
 - **Price Aggregator Connector**
 - **Database (Postgres + Redis)**
 - **On-chain contracts (Solidity, Ethereum)**
