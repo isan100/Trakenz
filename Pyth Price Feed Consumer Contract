@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
+
+// Pyth imports
+import "@pythnetwork/pyth-sdk-solidity/IPyth.sol";
+
+contract PythPriceConsumer {
+    IPyth public pyth;
+
+    // The constructor takes the Pyth contract address
+    constructor(address _pythContract) {
+        pyth = IPyth(_pythContract);
+    }
+
+    // Function to get the latest price for a given price feed ID
+    function getPrice(bytes32 priceFeedId) public view returns (int64 price, uint64 conf, int32 expo) {
+        // Fetch the price from the Pyth contract
+        PythStructs.Price memory p = pyth.getPriceUnsafe(priceFeedId);
+        return (p.price, p.conf, p.expo);
+    }
+}
